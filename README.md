@@ -5,7 +5,7 @@ Készítsünk konzolból futtatható Java programot az alábbira.
 Adott a resource folderben egy savingsData.csv banki számlákat tartalmazó bemeneti file.
 A file első sor a fejléc (header), amely az alábbi mezőket tartalmazza:
 
-- creationDate: számlanyitás dátuma (DD-MM-YYYY formátumban)
+- creationDate: számlanyitás dátuma (DD/MM/YYYY formátumban)
 - accountTypes: számla típusa (Savings/Money Market/stb.)
 - ownershipTypes: számlatulajdonos típusa (Individual/Joint/stb.)
 - accountName: számla neve
@@ -21,9 +21,9 @@ application.sort.order: rendezés sorrendje (asc/desc)
 1) Olvassuk be a savingsData.csv file-t soronként és töltsük be az adatokat egy Saving típusú objektumokat tartalmazó
    listába.
 2) Amennyiben a konfigurációs file-ban az application.filter paraméter be van kapcsolva, akkor szűrjük ki a listából a
-   hibás formátumú rekordokat.
+   hibás dátumformátumú rekordokat.
 3) Amennyiben a konfigurációs file-ban az application.sort paraméter be van kapcsolva, akkor rendezzük a listát a
-   számlanyitás szerint az application.sort.order paraméter szerint csökkenő vagy növekvő sorrendbe
+   számlanyitás dátuma szerint az application.sort.order paraméter szerint csökkenő vagy növekvő sorrendbe
 4) Írjuk ki a kapott eredmény listát a target/dumpSavings.csv file-ba a bemeneti formátumnak megfelelően
 
 Bónusz feladat (beadása nem kötelező):
@@ -41,10 +41,10 @@ TC1: Ellenőrizzük, hogy a betöltött lista elemszáma megfelelő
 TC2: Ellenőrizzük, hogy a betöltött lista első rekordja megfelelő adatokat tartalmaz
 TC3: Ellenőrizzük, hogy a betöltött lista utolsó rekordja megfelelő adatokat tartalmaz
 
-Tartalma:
+A projekt tartalma:
 
 - hu.masterfield.datatypes.Saving: ez legyen a listához szükséges Saving adattároló típus
-- hu.masterfield.utils.ConfigData: ez az osztály konstruktorban töltse meg a config.properties file-t és futás közben
+- hu.masterfield.utils.ConfigData: ez az osztály konstruktorban töltse be a config.properties file-t és futás közben
   innen legyenek lekérdezhető a konfigurációs paraméterek
 - hu.masterfield.utils.DataSource: itt legyen megoldva a Saving-ek betöltése a savingsData.csv-ből és a kiírásuk a
   dumpSavings.csv-be
